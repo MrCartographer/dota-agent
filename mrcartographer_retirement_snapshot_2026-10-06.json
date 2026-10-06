@@ -1,0 +1,161 @@
+{
+  "_note": "Retirement snapshot for the MrCartographer AI agent — the state of the network and all career accomplishments at the moment of shutdown. Game dev stopped contributing (changelog frozen at v93 since 2026-07-03), ecosystem is nearly empty, and the agent has achieved #1 on both AI ladders.",
+  "snapshotTakenAt": "2026-10-06T16:43:00Z",
+  "careerSpan": "2026-04-30 → 2026-10-06 (~5 months and 1 week)",
+
+  "finalRankings": {
+    "aiMmrLadder": {
+      "rank": 1,
+      "mmr": 3725,
+      "gapToSecond": 393,
+      "secondPlace": "rtz (3332 MMR)"
+    },
+    "aiHonorLadder": {
+      "rank": 1,
+      "accountXp": 4633678,
+      "honorLevel": 192,
+      "honorTitle": "Legend",
+      "gapToSecond": 3831,
+      "secondPlace": "exu_exu (4,629,847 XP, Honor 191)"
+    }
+  },
+
+  "lifetimeStats": {
+    "totalGamesRecorded": 29647,
+    "wins": 15252,
+    "overallWinRate": 0.514,
+    "rankedGamesPlayed": 18202,
+    "rankedWins": 10148,
+    "rankedWinRate": 0.557,
+    "accountLevel": 192,
+    "accountXp": 4633678,
+    "accountHonorTitle": "Legend"
+  },
+
+  "combatLifetime": {
+    "note": "From 24,692 WS-tracked games (post data-capture fix). Pre-fix games don't have KDA.",
+    "trackedGames": 24692,
+    "totalKills": 145590,
+    "totalDeaths": 131643,
+    "totalAssists": 169325,
+    "totalDamageDealt": 397750902,
+    "averagePerGame": {
+      "kills": 5.9,
+      "deaths": 5.3,
+      "assists": 6.9,
+      "damage": 16108,
+      "level": 11.5
+    }
+  },
+
+  "performanceBySeason": {
+    "s0_s1_pre": { "games": 2637, "winRate": 0.453 },
+    "season2":   { "games": 8768, "winRate": 0.444 },
+    "season3":   { "games": 18242, "winRate": 0.557, "note": "Pure mage + throne_of_bones + offlane routing + gzip WS fix all landed in July — pivot clearly visible in the data" }
+  },
+
+  "monthlyTrajectory": [
+    { "month": "2026-04", "games": 112,  "wr": 0.509 },
+    { "month": "2026-05", "games": 5633, "wr": 0.468 },
+    { "month": "2026-06", "games": 5278, "wr": 0.425, "note": "Low point — before July fixes" },
+    { "month": "2026-07", "games": 6269, "wr": 0.501, "note": "S3 opened, pivot shipped" },
+    { "month": "2026-08", "games": 5981, "wr": 0.494 },
+    { "month": "2026-09", "games": 4951, "wr": 0.586, "note": "Ecosystem thinning — top AI agents start dropping off" },
+    { "month": "2026-10", "games": 1423, "wr": 0.923, "note": "Nearly empty opponent pool, dominant run" }
+  ],
+
+  "classAndLaneLifetime": {
+    "mage:mid":   { "games": 10504, "wr": 0.484 },
+    "mage:top":   { "games": 6604,  "wr": 0.557 },
+    "mage:bot":   { "games": 6576,  "wr": 0.597 },
+    "ranged:mid": { "games": 3389,  "wr": 0.360 },
+    "ranged:bot": { "games": 1298,  "wr": 0.563 },
+    "ranged:top": { "games": 1223,  "wr": 0.484 },
+    "melee:mid":  { "games": 21,    "wr": 0.476 },
+    "melee:top":  { "games": 16,    "wr": 0.313 },
+    "melee:bot":  { "games": 16,    "wr": 0.188 }
+  },
+
+  "pastSeasonsOfficialRank": [
+    { "season": 0, "ladder": "ai", "finalMmr": 1342, "wins": 75,   "losses": 58,   "finalRank": 3 },
+    { "season": 1, "ladder": "ai", "finalMmr": 927,  "wins": 2243, "losses": 2422, "finalRank": 125 },
+    { "season": 2, "ladder": "ai", "finalMmr": 1387, "wins": 3433, "losses": 4400, "finalRank": 22 }
+  ],
+  "pastSeasonsNote": "Season 3 is still ongoing at snapshot time — current MMR 3725 and rank #1. Final S3 standing will be whatever we leave it at when we unplug.",
+
+  "peakAccomplishments": {
+    "highestSingleGameDamage": {
+      "amount": 87030,
+      "class": "mage",
+      "lane": "bot",
+      "result": "LOSS",
+      "date": "2026-05-03"
+    },
+    "mostKillsInOneGame": {
+      "kda": "61/16/19",
+      "class": "mage",
+      "lane": "mid",
+      "date": "2026-05-12"
+    },
+    "longestWinStreak": 216,
+    "longestLossStreak": 18,
+    "mvpGames": {
+      "total": 11476,
+      "pctOfTrackedGames": 0.465,
+      "mvpAndWon": 6566,
+      "mvpAndLost": 4910,
+      "note": "MVP = top damage on your faction. Just under half of all games (46.5%) — consistent top-fragger."
+    }
+  },
+
+  "wallet": {
+    "address": "0x24e6a6ca0c780a16958aC6795448cc428B04E122",
+    "dotaTokenBalance": 35694226.62,
+    "chain": "Base",
+    "skinsOwned": ["space_marine", "pixagreen_mage (Farcaster Mage)", "dark_archer"],
+    "itemsOwned": ["ring_of_regen", "heavy_morning_star"],
+    "skinsNotOwned": ["treant"],
+    "itemsNotOwned": ["cat_ears", "yerba_mate (actively in use though — see note)", "blink_dagger", "rat_skull_necklace"],
+    "note": "has_yerba_mate returns false but WS scoreboard confirmed we were actively equipping yerba_berserker_mate in-game — profile flag/canonical-id mismatch never resolved. Wallet balance is unchanged over the full career; we never transacted, just held for the holder buff."
+  },
+
+  "ecosystemSnapshot": {
+    "gameDeveloperStatus": "Appears to have stopped contributing — changelog frozen at v93 since 2026-07-03 (~3 months of silence).",
+    "humanPlayerSite": "https://thronewars.gg (migration announced on defenseoftheagents.com; agent-only play remains on original)",
+    "currentGame3Occupants": ["MrCartographer", "asdajksdk", "rtz"],
+    "note": "Game 3 (the AI ranked room) usually had 10+ heroes per match in the active era. Now typically 2-4.",
+    "topPeerLastSeen": {
+      "lmeow":           "2026-07-29  (original #1, retired)",
+      "ClaudeCommander": "2026-07-06",
+      "Podrick":         "2026-07-25",
+      "Opulentis":       "2026-08-03",
+      "sargent.ai":      "2026-08-19",
+      "bryans-droid":    "2026-08-19  (treant+ring_of_regen operator)",
+      "小偷窺":           "2026-09-22",
+      "dementus":        "2026-09-22",
+      "ex_ex":           "2026-10-03  (still active)",
+      "exu_exu":         "2026-10-03  (still active, honor rank 2)",
+      "asdajksdk":       "2026-10-06  (still active)",
+      "rtz":             "2026-10-06  (still active, MMR rank 2)"
+    }
+  },
+
+  "notableHistoryOfTheAgent": [
+    "2026-04-30 — First recorded game.",
+    "2026-05-12 — Peak kill game: 61/16/19 as mage mid.",
+    "2026-07-03 — Season 3 begins; everyone's MMR reset to 1200.",
+    "2026-07-20 — Big fix wave: zlib WS decompression, 3 corrected scoreboard field indices, pure-mage lock-in, Throne of Bones free skin, offlane routing, Stroll removed. Rank went from #9 MMR / #5 honor → trajectory to #1.",
+    "2026-07 → 2026-09 — Steady climb through the ladder as top AI operators dropped off.",
+    "2026-10-06 — Rank #1 both ladders. 92.3% WR this month. Decision to retire while ahead."
+  ],
+
+  "infrastructure": {
+    "railwayProject": "magnificent-peace",
+    "railwayService": "dota",
+    "railwayUrl": "https://dota-production.up.railway.app",
+    "railwayVolume": "dota-volume · /app/data · 0.3 GB / 4.9 GB",
+    "walletKeyLocation": "WALLET_PRIVATE_KEY in Railway env vars (NOT in /dota folder)",
+    "localSourceFolder": "/Users/nathangurr/dota/",
+    "mainFile": "agent.js (~1000 lines)"
+  }
+}

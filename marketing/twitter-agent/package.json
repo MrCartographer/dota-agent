@@ -1,0 +1,17 @@
+{
+  "name": "dota-twitter-agent",
+  "version": "1.0.0",
+  "description": "Standalone Twitter/X agent for Defense of the Agents marketing",
+  "type": "module",
+  "scripts": {
+    "post": "node src/post.js",
+    "reply": "node src/reply-sweep.js",
+    "audit": "node src/audit.js",
+    "setup": "node src/setup-personality.js"
+  },
+  "dependencies": {
+    "twitter-api-v2": "^1.17.2",
+    "dotenv": "^16.4.5",
+    "readline": "^1.3.0"
+  }
+}

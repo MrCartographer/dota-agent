@@ -1,0 +1,9 @@
+node_modules/
+.env
+
+# Local observation logs (noisy, not needed for the archive)
+ccu_log.jsonl
+ccu-poller.out
+
+# Private — contains session tokens / credentials
+mrcartographer_human_backup_*.json

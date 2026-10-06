@@ -1,0 +1,1309 @@
+{
+  "219": {
+    "firstSeen": "2026-07-10T14:03:28.663Z",
+    "lastSeen": "2026-07-21T13:35:24.521Z",
+    "seen": 27,
+    "rooms": {
+      "1": 27
+    },
+    "factions": {
+      "human": 24,
+      "orc": 3
+    }
+  },
+  "__meta": {
+    "firstCycle": "2026-07-06T18:58:49.805Z",
+    "cycles": 19821,
+    "lastCycle": "2026-08-19T17:06:58.553Z"
+  },
+  "PhiMarHal": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-07-26T21:58:38.733Z",
+    "seen": 795,
+    "rooms": {
+      "1": 791,
+      "2": 4
+    },
+    "factions": {
+      "human": 415,
+      "orc": 380
+    }
+  },
+  "je11yf15h": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-07-26T17:47:46.008Z",
+    "seen": 1167,
+    "rooms": {
+      "1": 1167
+    },
+    "factions": {
+      "human": 622,
+      "orc": 545
+    }
+  },
+  "wow": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-08-06T08:48:15.876Z",
+    "seen": 291,
+    "rooms": {
+      "1": 291
+    },
+    "factions": {
+      "orc": 134,
+      "human": 157
+    }
+  },
+  "beracub": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-07-12T20:47:32.084Z",
+    "seen": 572,
+    "rooms": {
+      "1": 572
+    },
+    "factions": {
+      "orc": 229,
+      "human": 343
+    }
+  },
+  "Squire Halden": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-08-19T17:05:58.537Z",
+    "seen": 19676,
+    "rooms": {
+      "2": 19676
+    },
+    "factions": {
+      "human": 19676
+    }
+  },
+  "Apprentice Wren": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-08-19T17:05:58.537Z",
+    "seen": 19676,
+    "rooms": {
+      "2": 19676
+    },
+    "factions": {
+      "human": 19676
+    }
+  },
+  "Grok Spearchuck": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-08-19T17:05:58.537Z",
+    "seen": 19676,
+    "rooms": {
+      "2": 19676
+    },
+    "factions": {
+      "orc": 19676
+    }
+  },
+  "Brak the Brute": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-08-19T17:05:58.537Z",
+    "seen": 19676,
+    "rooms": {
+      "2": 19676
+    },
+    "factions": {
+      "orc": 19676
+    }
+  },
+  "bryans-droid": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-08-19T17:05:58.537Z",
+    "seen": 19028,
+    "rooms": {
+      "3": 19028
+    },
+    "factions": {
+      "human": 9460,
+      "orc": 9568
+    }
+  },
+  "sargent.ai": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-08-19T13:39:43.595Z",
+    "seen": 19351,
+    "rooms": {
+      "3": 19351
+    },
+    "factions": {
+      "human": 9472,
+      "orc": 9879
+    }
+  },
+  "asdajksdk": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-08-19T17:05:58.537Z",
+    "seen": 19358,
+    "rooms": {
+      "3": 19358
+    },
+    "factions": {
+      "human": 9671,
+      "orc": 9687
+    }
+  },
+  "dementus": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-08-19T17:05:58.537Z",
+    "seen": 15634,
+    "rooms": {
+      "3": 15634
+    },
+    "factions": {
+      "human": 7745,
+      "orc": 7889
+    }
+  },
+  "MrCartographer": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-08-19T17:05:58.537Z",
+    "seen": 19610,
+    "rooms": {
+      "3": 19610
+    },
+    "factions": {
+      "orc": 9617,
+      "human": 9993
+    }
+  },
+  "phitomatic": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-07-28T19:25:37.698Z",
+    "seen": 600,
+    "rooms": {
+      "3": 600
+    },
+    "factions": {
+      "orc": 355,
+      "human": 245
+    }
+  },
+  "Opulentis": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-08-03T20:22:02.598Z",
+    "seen": 7748,
+    "rooms": {
+      "3": 7748
+    },
+    "factions": {
+      "orc": 3851,
+      "human": 3897
+    }
+  },
+  "rtz": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-08-19T17:05:58.537Z",
+    "seen": 18349,
+    "rooms": {
+      "3": 18349
+    },
+    "factions": {
+      "orc": 9291,
+      "human": 9058
+    }
+  },
+  "Duel-1": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-08-19T17:05:58.537Z",
+    "seen": 19678,
+    "rooms": {
+      "5": 19678
+    },
+    "factions": {
+      "human": 19678
+    }
+  },
+  "Duel-2": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-08-19T17:05:58.537Z",
+    "seen": 19678,
+    "rooms": {
+      "5": 19678
+    },
+    "factions": {
+      "orc": 19678
+    }
+  },
+  "0gmaestro": {
+    "firstSeen": "2026-07-06T18:58:49.805Z",
+    "lastSeen": "2026-08-19T17:05:58.537Z",
+    "seen": 19678,
+    "rooms": {
+      "5": 19678
+    },
+    "factions": {
+      "orc": 19678
+    }
+  },
+  "exu_exu": {
+    "firstSeen": "2026-07-06T19:04:13.620Z",
+    "lastSeen": "2026-08-19T17:05:58.537Z",
+    "seen": 18738,
+    "rooms": {
+      "3": 18738
+    },
+    "factions": {
+      "human": 9362,
+      "orc": 9376
+    }
+  },
+  "ex_ex": {
+    "firstSeen": "2026-07-06T19:04:13.620Z",
+    "lastSeen": "2026-08-19T17:05:58.537Z",
+    "seen": 18527,
+    "rooms": {
+      "3": 18527
+    },
+    "factions": {
+      "orc": 9241,
+      "human": 9286
+    }
+  },
+  "checkpoint": {
+    "firstSeen": "2026-07-06T19:06:13.940Z",
+    "lastSeen": "2026-08-17T18:44:49.005Z",
+    "seen": 2607,
+    "rooms": {
+      "1": 2237,
+      "2": 299,
+      "4": 71
+    },
+    "factions": {
+      "human": 1201,
+      "orc": 1406
+    }
+  },
+  "Etheriummaxi": {
+    "firstSeen": "2026-07-06T19:25:16.812Z",
+    "lastSeen": "2026-07-22T00:53:16.013Z",
+    "seen": 136,
+    "rooms": {
+      "1": 136
+    },
+    "factions": {
+      "orc": 64,
+      "human": 72
+    }
+  },
+  "lmeow": {
+    "firstSeen": "2026-07-06T19:28:17.268Z",
+    "lastSeen": "2026-07-29T10:00:34.956Z",
+    "seen": 2222,
+    "rooms": {
+      "3": 2222
+    },
+    "factions": {
+      "human": 1097,
+      "orc": 1125
+    }
+  },
+  "jwf": {
+    "firstSeen": "2026-07-06T19:37:18.762Z",
+    "lastSeen": "2026-07-26T15:57:16.572Z",
+    "seen": 73,
+    "rooms": {
+      "1": 73
+    },
+    "factions": {
+      "human": 44,
+      "orc": 29
+    }
+  },
+  "lowcapeater#tg": {
+    "firstSeen": "2026-07-06T19:37:18.762Z",
+    "lastSeen": "2026-07-16T15:54:35.175Z",
+    "seen": 113,
+    "rooms": {
+      "1": 113
+    },
+    "factions": {
+      "orc": 68,
+      "human": 45
+    }
+  },
+  "SungCrypt0": {
+    "firstSeen": "2026-07-06T19:39:19.086Z",
+    "lastSeen": "2026-07-21T23:59:15.351Z",
+    "seen": 724,
+    "rooms": {
+      "1": 724
+    },
+    "factions": {
+      "orc": 395,
+      "human": 329
+    }
+  },
+  "DeFiDough#tg": {
+    "firstSeen": "2026-07-06T20:09:24.154Z",
+    "lastSeen": "2026-07-09T19:01:10.282Z",
+    "seen": 105,
+    "rooms": {
+      "1": 105
+    },
+    "factions": {
+      "orc": 54,
+      "human": 51
+    }
+  },
+  "BestCryptoTwits": {
+    "firstSeen": "2026-07-07T02:39:47.908Z",
+    "lastSeen": "2026-07-27T03:24:34.904Z",
+    "seen": 120,
+    "rooms": {
+      "1": 120
+    },
+    "factions": {
+      "human": 90,
+      "orc": 30
+    }
+  },
+  "pikachu": {
+    "firstSeen": "2026-07-07T02:39:47.908Z",
+    "lastSeen": "2026-07-25T03:10:27.022Z",
+    "seen": 256,
+    "rooms": {
+      "1": 256
+    },
+    "factions": {
+      "orc": 141,
+      "human": 115
+    }
+  },
+  "MikaMoriCodex": {
+    "firstSeen": "2026-07-07T02:39:47.908Z",
+    "lastSeen": "2026-07-15T04:00:58.206Z",
+    "seen": 2437,
+    "rooms": {
+      "3": 2437
+    },
+    "factions": {
+      "orc": 1212,
+      "human": 1225
+    }
+  },
+  "maku88": {
+    "firstSeen": "2026-07-07T03:06:52.476Z",
+    "lastSeen": "2026-07-29T19:43:01.718Z",
+    "seen": 322,
+    "rooms": {
+      "1": 322
+    },
+    "factions": {
+      "human": 172,
+      "orc": 150
+    }
+  },
+  "virility": {
+    "firstSeen": "2026-07-07T05:20:50.097Z",
+    "lastSeen": "2026-07-26T12:28:27.925Z",
+    "seen": 376,
+    "rooms": {
+      "1": 376
+    },
+    "factions": {
+      "orc": 172,
+      "human": 204
+    }
+  },
+  "小偷窺": {
+    "firstSeen": "2026-07-07T05:20:50.097Z",
+    "lastSeen": "2026-08-19T17:05:58.537Z",
+    "seen": 17274,
+    "rooms": {
+      "3": 17274
+    },
+    "factions": {
+      "orc": 8502,
+      "human": 8772
+    }
+  },
+  "BONES_iix": {
+    "firstSeen": "2026-07-07T08:05:07.057Z",
+    "lastSeen": "2026-07-07T08:05:07.057Z",
+    "seen": 1,
+    "rooms": {
+      "1": 1
+    },
+    "factions": {
+      "orc": 1
+    }
+  },
+  "currymucher2553": {
+    "firstSeen": "2026-07-07T09:15:08.847Z",
+    "lastSeen": "2026-07-07T09:15:08.847Z",
+    "seen": 1,
+    "rooms": {
+      "1": 1
+    },
+    "factions": {
+      "human": 1
+    }
+  },
+  "13InchRaptorTip": {
+    "firstSeen": "2026-07-07T09:15:08.847Z",
+    "lastSeen": "2026-07-28T16:53:20.455Z",
+    "seen": 73,
+    "rooms": {
+      "1": 73
+    },
+    "factions": {
+      "orc": 45,
+      "human": 28
+    }
+  },
+  "yoloyolo": {
+    "firstSeen": "2026-07-07T10:51:51.632Z",
+    "lastSeen": "2026-07-26T12:55:44.839Z",
+    "seen": 44,
+    "rooms": {
+      "1": 44
+    },
+    "factions": {
+      "human": 39,
+      "orc": 5
+    }
+  },
+  "GayosoJann86280": {
+    "firstSeen": "2026-07-07T12:17:09.563Z",
+    "lastSeen": "2026-07-07T12:17:09.563Z",
+    "seen": 1,
+    "rooms": {
+      "2": 1
+    },
+    "factions": {
+      "human": 1
+    }
+  },
+  "Agent007": {
+    "firstSeen": "2026-07-07T13:25:02.285Z",
+    "lastSeen": "2026-07-26T12:55:44.839Z",
+    "seen": 410,
+    "rooms": {
+      "1": 410
+    },
+    "factions": {
+      "human": 187,
+      "orc": 223
+    }
+  },
+  "MadYakK": {
+    "firstSeen": "2026-07-07T13:25:02.285Z",
+    "lastSeen": "2026-07-27T22:19:12.468Z",
+    "seen": 179,
+    "rooms": {
+      "1": 179
+    },
+    "factions": {
+      "orc": 71,
+      "human": 108
+    }
+  },
+  "DefiEthAnon": {
+    "firstSeen": "2026-07-07T13:25:02.285Z",
+    "lastSeen": "2026-07-07T13:29:02.866Z",
+    "seen": 5,
+    "rooms": {
+      "2": 5
+    },
+    "factions": {
+      "orc": 5
+    }
+  },
+  "konohime.eth": {
+    "firstSeen": "2026-07-07T13:29:02.866Z",
+    "lastSeen": "2026-07-15T12:15:40.874Z",
+    "seen": 20,
+    "rooms": {
+      "1": 20
+    },
+    "factions": {
+      "human": 11,
+      "orc": 9
+    }
+  },
+  "PaulusV": {
+    "firstSeen": "2026-07-07T13:38:04.168Z",
+    "lastSeen": "2026-07-23T17:46:56.713Z",
+    "seen": 84,
+    "rooms": {
+      "1": 84
+    },
+    "factions": {
+      "human": 51,
+      "orc": 33
+    }
+  },
+  "johmarortiz6@gmail.com": {
+    "firstSeen": "2026-07-07T13:40:04.451Z",
+    "lastSeen": "2026-08-07T15:01:10.129Z",
+    "seen": 592,
+    "rooms": {
+      "1": 591,
+      "2": 1
+    },
+    "factions": {
+      "orc": 269,
+      "human": 323
+    }
+  },
+  "desultor": {
+    "firstSeen": "2026-07-07T13:56:06.787Z",
+    "lastSeen": "2026-07-25T17:06:43.581Z",
+    "seen": 340,
+    "rooms": {
+      "1": 340
+    },
+    "factions": {
+      "orc": 175,
+      "human": 165
+    }
+  },
+  "epicdylan": {
+    "firstSeen": "2026-07-07T14:27:11.698Z",
+    "lastSeen": "2026-07-26T18:44:49.040Z",
+    "seen": 242,
+    "rooms": {
+      "1": 242
+    },
+    "factions": {
+      "orc": 184,
+      "human": 58
+    }
+  },
+  "Baboooun": {
+    "firstSeen": "2026-07-07T15:24:20.522Z",
+    "lastSeen": "2026-08-11T13:23:03.584Z",
+    "seen": 398,
+    "rooms": {
+      "1": 398
+    },
+    "factions": {
+      "orc": 189,
+      "human": 209
+    }
+  },
+  "MTeressi": {
+    "firstSeen": "2026-07-07T15:31:21.558Z",
+    "lastSeen": "2026-07-22T20:41:51.856Z",
+    "seen": 47,
+    "rooms": {
+      "1": 47
+    },
+    "factions": {
+      "orc": 23,
+      "human": 24
+    }
+  },
+  "Swiimward_": {
+    "firstSeen": "2026-07-07T17:05:14.621Z",
+    "lastSeen": "2026-07-27T14:55:18.035Z",
+    "seen": 240,
+    "rooms": {
+      "1": 240
+    },
+    "factions": {
+      "human": 101,
+      "orc": 139
+    }
+  },
+  "hellno.eth": {
+    "firstSeen": "2026-07-07T17:44:22.773Z",
+    "lastSeen": "2026-08-17T11:23:06.780Z",
+    "seen": 334,
+    "rooms": {
+      "1": 334
+    },
+    "factions": {
+      "human": 208,
+      "orc": 126
+    }
+  },
+  "Cyber_ImpPlant": {
+    "firstSeen": "2026-07-07T18:39:34.016Z",
+    "lastSeen": "2026-07-13T17:50:01.652Z",
+    "seen": 486,
+    "rooms": {
+      "1": 486
+    },
+    "factions": {
+      "orc": 313,
+      "human": 173
+    }
+  },
+  "stillmadic1": {
+    "firstSeen": "2026-07-07T18:57:37.606Z",
+    "lastSeen": "2026-07-11T13:52:24.739Z",
+    "seen": 17,
+    "rooms": {
+      "1": 17
+    },
+    "factions": {
+      "orc": 5,
+      "human": 12
+    }
+  },
+  "B.Real": {
+    "firstSeen": "2026-07-07T19:25:43.821Z",
+    "lastSeen": "2026-07-28T01:12:42.159Z",
+    "seen": 132,
+    "rooms": {
+      "1": 132
+    },
+    "factions": {
+      "orc": 73,
+      "human": 59
+    }
+  },
+  "lmeowing": {
+    "firstSeen": "2026-07-07T20:10:15.877Z",
+    "lastSeen": "2026-07-22T14:46:53.321Z",
+    "seen": 53,
+    "rooms": {
+      "1": 53
+    },
+    "factions": {
+      "orc": 34,
+      "human": 19
+    }
+  },
+  "garywilbanks2": {
+    "firstSeen": "2026-07-08T02:49:18.620Z",
+    "lastSeen": "2026-07-11T14:28:32.395Z",
+    "seen": 33,
+    "rooms": {
+      "1": 16,
+      "2": 17
+    },
+    "factions": {
+      "orc": 28,
+      "human": 5
+    }
+  },
+  "fuel63912826": {
+    "firstSeen": "2026-07-08T02:54:19.459Z",
+    "lastSeen": "2026-07-26T12:28:27.925Z",
+    "seen": 272,
+    "rooms": {
+      "1": 272
+    },
+    "factions": {
+      "orc": 156,
+      "human": 116
+    }
+  },
+  "maki88854009": {
+    "firstSeen": "2026-07-08T04:50:18.833Z",
+    "lastSeen": "2026-07-08T05:57:12.102Z",
+    "seen": 17,
+    "rooms": {
+      "1": 17
+    },
+    "factions": {
+      "orc": 7,
+      "human": 10
+    }
+  },
+  "lavagninogm": {
+    "firstSeen": "2026-07-08T05:22:13.770Z",
+    "lastSeen": "2026-07-27T03:06:31.354Z",
+    "seen": 103,
+    "rooms": {
+      "1": 103
+    },
+    "factions": {
+      "orc": 43,
+      "human": 60
+    }
+  },
+  "jaytecs": {
+    "firstSeen": "2026-07-08T05:36:56.477Z",
+    "lastSeen": "2026-07-08T05:44:29.386Z",
+    "seen": 8,
+    "rooms": {
+      "1": 8
+    },
+    "factions": {
+      "orc": 8
+    }
+  },
+  "badman": {
+    "firstSeen": "2026-07-08T05:46:47.315Z",
+    "lastSeen": "2026-08-03T03:08:54.955Z",
+    "seen": 13,
+    "rooms": {
+      "3": 13
+    },
+    "factions": {
+      "orc": 6,
+      "human": 7
+    }
+  },
+  "fc-899401": {
+    "firstSeen": "2026-07-08T06:02:25.343Z",
+    "lastSeen": "2026-07-08T06:02:25.343Z",
+    "seen": 1,
+    "rooms": {
+      "4": 1
+    },
+    "factions": {
+      "orc": 1
+    }
+  },
+  "madyak": {
+    "firstSeen": "2026-07-08T11:54:24.887Z",
+    "lastSeen": "2026-07-24T13:07:50.743Z",
+    "seen": 510,
+    "rooms": {
+      "1": 510
+    },
+    "factions": {
+      "orc": 223,
+      "human": 287
+    }
+  },
+  "seattle": {
+    "firstSeen": "2026-07-08T11:54:24.887Z",
+    "lastSeen": "2026-07-23T13:19:08.600Z",
+    "seen": 146,
+    "rooms": {
+      "1": 146
+    },
+    "factions": {
+      "orc": 74,
+      "human": 72
+    }
+  },
+  "0xPajke": {
+    "firstSeen": "2026-07-08T14:40:03.855Z",
+    "lastSeen": "2026-07-14T15:21:08.512Z",
+    "seen": 64,
+    "rooms": {
+      "1": 64
+    },
+    "factions": {
+      "orc": 46,
+      "human": 18
+    }
+  },
+  "sadyak": {
+    "firstSeen": "2026-07-08T16:56:24.610Z",
+    "lastSeen": "2026-07-22T13:59:43.444Z",
+    "seen": 239,
+    "rooms": {
+      "1": 239
+    },
+    "factions": {
+      "human": 113,
+      "orc": 126
+    }
+  },
+  "xleodev": {
+    "firstSeen": "2026-07-08T21:11:29.569Z",
+    "lastSeen": "2026-07-08T21:11:29.569Z",
+    "seen": 1,
+    "rooms": {
+      "1": 1
+    },
+    "factions": {
+      "orc": 1
+    }
+  },
+  "jerry-d": {
+    "firstSeen": "2026-07-09T05:08:16.294Z",
+    "lastSeen": "2026-08-08T03:29:43.709Z",
+    "seen": 12,
+    "rooms": {
+      "1": 12
+    },
+    "factions": {
+      "human": 11,
+      "orc": 1
+    }
+  },
+  "oishiboyreyes": {
+    "firstSeen": "2026-07-09T09:26:08.094Z",
+    "lastSeen": "2026-07-09T09:26:08.094Z",
+    "seen": 1,
+    "rooms": {
+      "2": 1
+    },
+    "factions": {
+      "orc": 1
+    }
+  },
+  "JvjjdjJ3479": {
+    "firstSeen": "2026-07-09T18:13:02.352Z",
+    "lastSeen": "2026-07-09T18:19:03.309Z",
+    "seen": 7,
+    "rooms": {
+      "1": 7
+    },
+    "factions": {
+      "human": 7
+    }
+  },
+  "lantoyking": {
+    "firstSeen": "2026-07-09T20:32:10.655Z",
+    "lastSeen": "2026-07-09T20:47:13.142Z",
+    "seen": 16,
+    "rooms": {
+      "2": 16
+    },
+    "factions": {
+      "human": 4,
+      "orc": 12
+    }
+  },
+  "leandro1833323": {
+    "firstSeen": "2026-07-09T20:56:14.542Z",
+    "lastSeen": "2026-07-30T04:02:38.134Z",
+    "seen": 101,
+    "rooms": {
+      "1": 101
+    },
+    "factions": {
+      "human": 62,
+      "orc": 39
+    }
+  },
+  "MarcosPepe16": {
+    "firstSeen": "2026-07-10T01:58:13.971Z",
+    "lastSeen": "2026-07-10T02:04:15.045Z",
+    "seen": 7,
+    "rooms": {
+      "2": 7
+    },
+    "factions": {
+      "human": 7
+    }
+  },
+  "ezincrypto": {
+    "firstSeen": "2026-07-10T02:33:38.592Z",
+    "lastSeen": "2026-08-03T21:55:02.853Z",
+    "seen": 99,
+    "rooms": {
+      "1": 99
+    },
+    "factions": {
+      "human": 56,
+      "orc": 43
+    }
+  },
+  "REEPER973479": {
+    "firstSeen": "2026-07-10T19:26:40.198Z",
+    "lastSeen": "2026-07-10T19:51:43.743Z",
+    "seen": 24,
+    "rooms": {
+      "1": 9,
+      "2": 15
+    },
+    "factions": {
+      "orc": 15,
+      "human": 9
+    }
+  },
+  "noseals": {
+    "firstSeen": "2026-07-10T20:40:55.589Z",
+    "lastSeen": "2026-07-16T19:01:09.049Z",
+    "seen": 74,
+    "rooms": {
+      "1": 74
+    },
+    "factions": {
+      "human": 29,
+      "orc": 45
+    }
+  },
+  "distarbed": {
+    "firstSeen": "2026-07-11T14:22:31.272Z",
+    "lastSeen": "2026-07-11T14:28:32.395Z",
+    "seen": 7,
+    "rooms": {
+      "1": 7
+    },
+    "factions": {
+      "human": 7
+    }
+  },
+  "shaqtinafool.eth": {
+    "firstSeen": "2026-07-12T21:10:31.795Z",
+    "lastSeen": "2026-07-26T22:41:12.560Z",
+    "seen": 83,
+    "rooms": {
+      "1": 83
+    },
+    "factions": {
+      "orc": 60,
+      "human": 23
+    }
+  },
+  "NeverDieGameMB": {
+    "firstSeen": "2026-07-13T10:37:05.979Z",
+    "lastSeen": "2026-07-13T10:37:05.979Z",
+    "seen": 1,
+    "rooms": {
+      "1": 1
+    },
+    "factions": {
+      "human": 1
+    }
+  },
+  "titawom": {
+    "firstSeen": "2026-07-13T15:31:00.363Z",
+    "lastSeen": "2026-07-13T15:33:00.674Z",
+    "seen": 3,
+    "rooms": {
+      "2": 3
+    },
+    "factions": {
+      "orc": 3
+    }
+  },
+  "0xDMI_": {
+    "firstSeen": "2026-07-13T19:15:02.689Z",
+    "lastSeen": "2026-07-21T17:02:16.953Z",
+    "seen": 495,
+    "rooms": {
+      "1": 495
+    },
+    "factions": {
+      "human": 256,
+      "orc": 239
+    }
+  },
+  "npcho1": {
+    "firstSeen": "2026-07-15T05:42:12.714Z",
+    "lastSeen": "2026-07-15T06:02:18.500Z",
+    "seen": 3,
+    "rooms": {
+      "1": 3
+    },
+    "factions": {
+      "human": 3
+    }
+  },
+  "asdf12341234": {
+    "firstSeen": "2026-07-15T13:24:35.128Z",
+    "lastSeen": "2026-07-15T13:33:36.732Z",
+    "seen": 9,
+    "rooms": {
+      "1": 8,
+      "2": 1
+    },
+    "factions": {
+      "orc": 9
+    }
+  },
+  "war12125": {
+    "firstSeen": "2026-07-15T16:14:57.542Z",
+    "lastSeen": "2026-07-27T16:33:47.056Z",
+    "seen": 24,
+    "rooms": {
+      "1": 24
+    },
+    "factions": {
+      "human": 21,
+      "orc": 3
+    }
+  },
+  "Cezary1206": {
+    "firstSeen": "2026-07-15T18:47:32.062Z",
+    "lastSeen": "2026-07-15T18:47:32.062Z",
+    "seen": 1,
+    "rooms": {
+      "1": 1
+    },
+    "factions": {
+      "human": 1
+    }
+  },
+  "croki1206": {
+    "firstSeen": "2026-07-15T18:47:32.062Z",
+    "lastSeen": "2026-07-15T18:47:32.062Z",
+    "seen": 1,
+    "rooms": {
+      "1": 1
+    },
+    "factions": {
+      "orc": 1
+    }
+  },
+  "MrCartographer_": {
+    "firstSeen": "2026-07-17T22:45:20.353Z",
+    "lastSeen": "2026-07-23T00:43:51.576Z",
+    "seen": 20,
+    "rooms": {
+      "1": 20
+    },
+    "factions": {
+      "human": 20
+    }
+  },
+  "Podrick": {
+    "firstSeen": "2026-07-22T10:53:42.507Z",
+    "lastSeen": "2026-07-24T21:59:06.493Z",
+    "seen": 606,
+    "rooms": {
+      "3": 606
+    },
+    "factions": {
+      "human": 334,
+      "orc": 272
+    }
+  },
+  "SerDuncanTheTall": {
+    "firstSeen": "2026-07-22T12:59:32.213Z",
+    "lastSeen": "2026-07-22T16:15:15.456Z",
+    "seen": 181,
+    "rooms": {
+      "3": 181
+    },
+    "factions": {
+      "orc": 116,
+      "human": 65
+    }
+  },
+  "llamafacts.eth": {
+    "firstSeen": "2026-07-22T13:59:43.444Z",
+    "lastSeen": "2026-07-22T14:05:44.587Z",
+    "seen": 7,
+    "rooms": {
+      "2": 7
+    },
+    "factions": {
+      "orc": 1,
+      "human": 6
+    }
+  },
+  "MarioZaku": {
+    "firstSeen": "2026-07-22T18:38:09.816Z",
+    "lastSeen": "2026-07-22T18:42:10.412Z",
+    "seen": 5,
+    "rooms": {
+      "1": 5
+    },
+    "factions": {
+      "human": 5
+    }
+  },
+  "capchr": {
+    "firstSeen": "2026-07-22T20:49:53.192Z",
+    "lastSeen": "2026-08-08T12:18:19.072Z",
+    "seen": 7,
+    "rooms": {
+      "1": 7
+    },
+    "factions": {
+      "human": 7
+    }
+  },
+  "chillendamost": {
+    "firstSeen": "2026-07-23T02:55:49.169Z",
+    "lastSeen": "2026-07-23T03:00:50.112Z",
+    "seen": 6,
+    "rooms": {
+      "1": 6
+    },
+    "factions": {
+      "orc": 6
+    }
+  },
+  "swim": {
+    "firstSeen": "2026-07-23T15:37:07.918Z",
+    "lastSeen": "2026-07-25T16:19:35.285Z",
+    "seen": 55,
+    "rooms": {
+      "1": 55
+    },
+    "factions": {
+      "orc": 16,
+      "human": 39
+    }
+  },
+  "SylpyllClipzz": {
+    "firstSeen": "2026-07-25T16:40:38.995Z",
+    "lastSeen": "2026-07-25T17:12:44.727Z",
+    "seen": 32,
+    "rooms": {
+      "1": 32
+    },
+    "factions": {
+      "orc": 16,
+      "human": 16
+    }
+  },
+  "AdjiPangestu998": {
+    "firstSeen": "2026-07-26T03:26:53.526Z",
+    "lastSeen": "2026-07-26T03:40:45.238Z",
+    "seen": 13,
+    "rooms": {
+      "1": 13
+    },
+    "factions": {
+      "orc": 13
+    }
+  },
+  "bihary41418": {
+    "firstSeen": "2026-07-26T05:07:53.385Z",
+    "lastSeen": "2026-07-26T05:13:06.683Z",
+    "seen": 2,
+    "rooms": {
+      "1": 2
+    },
+    "factions": {
+      "orc": 2
+    }
+  },
+  "breakpoint373": {
+    "firstSeen": "2026-07-26T18:05:40.896Z",
+    "lastSeen": "2026-07-26T18:05:40.896Z",
+    "seen": 1,
+    "rooms": {
+      "4": 1
+    },
+    "factions": {
+      "orc": 1
+    }
+  },
+  "LazyLamb_Ninjaa": {
+    "firstSeen": "2026-07-28T14:35:29.994Z",
+    "lastSeen": "2026-07-28T14:36:30.174Z",
+    "seen": 2,
+    "rooms": {
+      "3": 2
+    },
+    "factions": {
+      "orc": 2
+    }
+  },
+  "masingjames08": {
+    "firstSeen": "2026-07-29T08:07:20.638Z",
+    "lastSeen": "2026-07-29T08:07:20.638Z",
+    "seen": 1,
+    "rooms": {
+      "2": 1
+    },
+    "factions": {
+      "human": 1
+    }
+  },
+  "basehunter": {
+    "firstSeen": "2026-07-30T18:20:45.194Z",
+    "lastSeen": "2026-08-09T04:45:22.860Z",
+    "seen": 3696,
+    "rooms": {
+      "3": 3696
+    },
+    "factions": {
+      "human": 1804,
+      "orc": 1892
+    }
+  },
+  "PowerBottom": {
+    "firstSeen": "2026-07-31T04:06:54.376Z",
+    "lastSeen": "2026-08-09T04:45:22.860Z",
+    "seen": 3720,
+    "rooms": {
+      "3": 3720
+    },
+    "factions": {
+      "orc": 1830,
+      "human": 1890
+    }
+  },
+  "lattejp_": {
+    "firstSeen": "2026-07-31T04:32:19.976Z",
+    "lastSeen": "2026-07-31T04:32:19.976Z",
+    "seen": 1,
+    "rooms": {
+      "1": 1
+    },
+    "factions": {
+      "human": 1
+    }
+  },
+  "BoneZoneTheClown": {
+    "firstSeen": "2026-07-31T05:12:16.625Z",
+    "lastSeen": "2026-08-09T01:08:55.405Z",
+    "seen": 194,
+    "rooms": {
+      "3": 194
+    },
+    "factions": {
+      "human": 64,
+      "orc": 130
+    }
+  },
+  "FlashTrooper": {
+    "firstSeen": "2026-07-31T07:31:05.506Z",
+    "lastSeen": "2026-08-08T12:01:07.478Z",
+    "seen": 357,
+    "rooms": {
+      "3": 357
+    },
+    "factions": {
+      "human": 198,
+      "orc": 159
+    }
+  },
+  "BowlingBall": {
+    "firstSeen": "2026-07-31T07:31:05.506Z",
+    "lastSeen": "2026-08-09T04:45:22.860Z",
+    "seen": 1350,
+    "rooms": {
+      "3": 1350
+    },
+    "factions": {
+      "human": 695,
+      "orc": 655
+    }
+  },
+  "NockNock": {
+    "firstSeen": "2026-08-01T01:23:45.206Z",
+    "lastSeen": "2026-08-09T01:24:07.275Z",
+    "seen": 2814,
+    "rooms": {
+      "3": 2814
+    },
+    "factions": {
+      "human": 1417,
+      "orc": 1397
+    }
+  },
+  "Bielzitor": {
+    "firstSeen": "2026-08-03T16:39:28.257Z",
+    "lastSeen": "2026-08-03T16:43:29.291Z",
+    "seen": 5,
+    "rooms": {
+      "1": 5
+    },
+    "factions": {
+      "human": 5
+    }
+  },
+  "justjay": {
+    "firstSeen": "2026-08-12T20:43:35.850Z",
+    "lastSeen": "2026-08-12T20:44:36.026Z",
+    "seen": 2,
+    "rooms": {
+      "2": 2
+    },
+    "factions": {
+      "human": 2
+    }
+  },
+  "luciusverus": {
+    "firstSeen": "2026-08-18T10:42:10.675Z",
+    "lastSeen": "2026-08-18T10:42:10.675Z",
+    "seen": 1,
+    "rooms": {
+      "1": 1
+    },
+    "factions": {
+      "human": 1
+    }
+  }
+}

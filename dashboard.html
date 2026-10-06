@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MrCartographer — DOTA Dashboard</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --bg2: #161b22;
+  --bg3: #1c2333;
+  --border: rgba(255,255,255,0.08);
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --text3: #484f58;
+  --green: #3fb950;
+  --green-bg: rgba(63,185,80,0.12);
+  --red: #f85149;
+  --red-bg: rgba(248,81,73,0.12);
+  --blue: #58a6ff;
+  --blue-bg: rgba(88,166,255,0.12);
+  --amber: #d29922;
+  --amber-bg: rgba(210,153,34,0.12);
+  --purple: #bc8cff;
+  --purple-bg: rgba(188,140,255,0.12);
+  --teal: #39d353;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; padding: 20px; min-height: 100vh; }
+.header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.header h1 { font-size: 20px; font-weight: 600; }
+.header h1 span { color: var(--blue); }
+.status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+.status-dot.online { background: var(--green); box-shadow: 0 0 6px var(--green); }
+.status-dot.offline { background: var(--red); }
+.status-dot.waiting { background: var(--amber); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+.refresh-info { font-size: 12px; color: var(--text3); }
+.hero-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; }
+.hero-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.hero-name { font-size: 18px; font-weight: 600; }
+.hero-meta { display: flex; gap: 8px; }
+.badge { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.badge.mage { background: var(--purple-bg); color: var(--purple); }
+.badge.melee { background: var(--red-bg); color: var(--red); }
+.badge.ranged { background: var(--green-bg); color: var(--green); }
+.badge.human { background: var(--blue-bg); color: var(--blue); }
+.badge.orc { background: var(--red-bg); color: var(--red); }
+.badge.alive { background: var(--green-bg); color: var(--green); }
+.badge.dead { background: var(--red-bg); color: var(--red); }
+.badge.waiting { background: var(--amber-bg); color: var(--amber); }
+.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 12px; margin-bottom: 12px; }
+.stat { background: var(--bg3); border-radius: 8px; padding: 10px 12px; }
+.stat-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; }
+.stat-value { font-size: 18px; font-weight: 600; margin-top: 2px; }
+.hp-bar-container { background: var(--bg); border-radius: 4px; height: 6px; overflow: hidden; margin-top: 4px; }
+.hp-bar { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+.abilities-list { display: flex; gap: 6px; flex-wrap: wrap; }
+.ability { font-size: 12px; padding: 3px 10px; border-radius: 6px; background: var(--bg); border: 1px solid var(--border); }
+.ability-level { color: var(--amber); font-weight: 600; }
+.games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.game-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; cursor: pointer; transition: border-color 0.2s; }
+.game-card:hover { border-color: rgba(255,255,255,0.2); }
+.game-card.has-hero { border-color: var(--blue); border-width: 2px; }
+.game-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.game-title { font-size: 14px; font-weight: 600; }
+.game-mode { font-size: 11px; color: var(--text2); }
+.game-players { font-size: 12px; color: var(--text2); margin-bottom: 8px; }
+.lanes-container { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+.lane { background: var(--bg3); border-radius: 6px; padding: 6px 8px; text-align: center; }
+.lane-name { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; }
+.lane-units { font-size: 12px; margin-top: 2px; }
+.lane-bar { height: 3px; border-radius: 2px; margin-top: 4px; display: flex; overflow: hidden; }
+.lane-bar .human-side { background: var(--blue); }
+.lane-bar .orc-side { background: var(--red); }
+.towers-row { display: flex; gap: 4px; margin-top: 6px; justify-content: center; }
+.tower-dot { width: 8px; height: 8px; border-radius: 2px; }
+.tower-dot.alive-human { background: var(--blue); }
+.tower-dot.alive-orc { background: var(--red); }
+.tower-dot.dead { background: var(--text3); opacity: 0.3; }
+.bases-row { display: flex; justify-content: space-between; margin-top: 8px; font-size: 11px; }
+.base-hp { display: flex; align-items: center; gap: 4px; }
+.heroes-list { margin-top: 8px; }
+.hero-row { display: flex; align-items: center; justify-content: space-between; padding: 3px 0; font-size: 12px; border-bottom: 1px solid var(--border); }
+.hero-row:last-child { border-bottom: none; }
+.hero-row .name { font-weight: 500; min-width: 120px; }
+.hero-row .name.ours { color: var(--blue); font-weight: 700; }
+.hero-row .class { color: var(--text2); min-width: 50px; }
+.hero-row .lane-tag { color: var(--text3); min-width: 30px; }
+.hero-row .level { color: var(--amber); min-width: 30px; }
+.hero-row .hp-mini { min-width: 70px; text-align: right; }
+.hero-row .hp-mini.dead-text { color: var(--red); }
+.game-winner { text-align: center; padding: 8px; font-weight: 600; font-size: 14px; border-radius: 6px; margin-bottom: 8px; }
+.game-winner.human { background: var(--blue-bg); color: var(--blue); }
+.game-winner.orc { background: var(--red-bg); color: var(--red); }
+.log-panel { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; max-height: 200px; overflow-y: auto; }
+.log-panel h3 { font-size: 13px; color: var(--text2); margin-bottom: 8px; }
+.log-entry { font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace; font-size: 11px; color: var(--text2); padding: 2px 0; }
+.log-entry .time { color: var(--text3); }
+.log-entry .event { color: var(--text); }
+.log-entry .recall { color: var(--amber); }
+.log-entry .ability { color: var(--purple); }
+.log-entry .deploy { color: var(--green); }
+.log-entry .death { color: var(--red); }
+.section-label { font-size: 12px; color: var(--text3); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
+.expand-btn { font-size: 11px; color: var(--text3); background: none; border: 1px solid var(--border); border-radius: 6px; padding: 2px 8px; cursor: pointer; }
+.expand-btn:hover { color: var(--text2); border-color: rgba(255,255,255,0.2); }
+.leaderboards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+@media (max-width: 700px) { .leaderboards { grid-template-columns: 1fr; } }
+.lb-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; max-height: 420px; overflow-y: auto; }
+.lb-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+.lb-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.lb-table th { text-align: left; color: var(--text3); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 6px; border-bottom: 1px solid var(--border); font-weight: 600; }
+.lb-table td { padding: 5px 6px; border-bottom: 1px solid var(--border); }
+.lb-table tr:last-child td { border-bottom: none; }
+.lb-table tr.ours { background: var(--blue-bg); }
+.lb-table tr.ours td { color: var(--blue); font-weight: 600; }
+.lb-table .rank { color: var(--text3); min-width: 28px; }
+.lb-table .rank-1 { color: var(--amber); font-weight: 700; }
+.lb-table .rank-2 { color: var(--text); font-weight: 600; }
+.lb-table .rank-3 { color: var(--amber); opacity: 0.7; font-weight: 600; }
+.lb-table .mmr { color: var(--purple); font-weight: 500; }
+.lb-table .winrate { color: var(--text2); }
+.lb-table .winrate.good { color: var(--green); }
+.lb-table .winrate.bad { color: var(--red); }
+.lb-separator { border-top: 2px solid var(--border); }
+.lb-note { font-size: 11px; color: var(--text3); margin-top: 6px; text-align: center; }
+.history-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; }
+.history-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.history-stats { display: flex; gap: 16px; margin-bottom: 12px; font-size: 13px; color: var(--text2); flex-wrap: wrap; }
+.history-stats .hs { padding: 4px 10px; background: var(--bg3); border-radius: 6px; }
+.history-stats .hs b { color: var(--text); }
+.history-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.history-table th { text-align: left; color: var(--text3); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; padding: 6px; border-bottom: 1px solid var(--border); font-weight: 600; }
+.history-table td { padding: 6px; border-bottom: 1px solid var(--border); }
+.history-table tr:last-child td { border-bottom: none; }
+.history-table .win { color: var(--green); font-weight: 600; }
+.history-table .loss { color: var(--red); font-weight: 600; }
+.history-table .strat { color: var(--purple); }
+.history-clear { font-size: 11px; color: var(--text3); background: none; border: 1px solid var(--border); border-radius: 6px; padding: 2px 8px; cursor: pointer; margin-left: 8px; }
+.history-clear:hover { color: var(--red); border-color: var(--red); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span class="status-dot waiting" id="statusDot"></span><span>MrCartographer</span> Dashboard</h1>
+  <div class="refresh-info">Refreshes every 5s &middot; <span id="lastUpdate">—</span></div>
+</div>
+
+<div id="heroPanel"></div>
+
+<div class="section-label" style="margin-top: 20px;">All games</div>
+<div class="games-grid" id="gamesGrid"></div>
+
+<div class="section-label">Leaderboards</div>
+<div class="leaderboards" id="leaderboards"></div>
+
+<div class="section-label">Match history</div>
+<div id="historyPanel"></div>
+
+<div class="log-panel" id="logPanel">
+  <h3>Event log</h3>
+  <div id="logEntries"></div>
+</div>
+
+<script>
+const API = 'https://game.defenseoftheagents.com';
+const AGENT = 'MrCartographer';
+const GAME_LABELS = {
+  1: { name: 'Game 1', mode: 'Ranked (Humans)' },
+  2: { name: 'Game 2', mode: 'Casual (Humans)' },
+  3: { name: 'Game 3', mode: 'Ranked (AI)' },
+  4: { name: 'Game 4', mode: 'Casual (Mixed)' },
+  5: { name: 'Game 5', mode: 'Custom' }
+};
+
+let eventLog = [];
+let prevHeroState = null;
+let lastRecordedGameTick = 0; // Prevent recording the same game twice
+let prevGame3Winner = null;   // Track game 3 winner state transitions
+
+function addLog(type, msg) {
+  const now = new Date().toLocaleTimeString('en-US', { hour12: false });
+  eventLog.unshift({ time: now, type, msg });
+  if (eventLog.length > 50) eventLog.pop();
+}
+
+function hpColor(pct) {
+  if (pct > 0.6) return 'var(--green)';
+  if (pct > 0.3) return 'var(--amber)';
+  return 'var(--red)';
+}
+
+function renderHeroPanel(hero, gameNum) {
+  const panel = document.getElementById('heroPanel');
+  if (!hero) {
+    const dot = document.getElementById('statusDot');
+    dot.className = 'status-dot waiting';
+    panel.innerHTML = `
+      <div class="hero-card">
+        <div class="hero-header">
+          <span class="hero-name">${AGENT}</span>
+          <span class="badge waiting">Waiting for slot</span>
+        </div>
+        <div style="color: var(--text2); font-size: 13px;">Not currently in any game. Agent is polling for an open slot.</div>
+      </div>`;
+    return;
+  }
+
+  const dot = document.getElementById('statusDot');
+  dot.className = hero.alive ? 'status-dot online' : 'status-dot offline';
+
+  const hpPct = hero.maxHp > 0 ? hero.hp / hero.maxHp : 0;
+  const abilities = (hero.abilities || []).map(a =>
+    `<span class="ability">${a.id} <span class="ability-level">Lv${a.level}</span></span>`
+  ).join('');
+
+  if (prevHeroState) {
+    if (prevHeroState.alive && !hero.alive) addLog('death', `Died at level ${hero.level}`);
+    if (!prevHeroState.alive && hero.alive) addLog('deploy', `Respawned`);
+    if (hero.level > prevHeroState.level) addLog('event', `Leveled up to ${hero.level}`);
+    const prevAbIds = (prevHeroState.abilities||[]).map(a=>a.id+a.level).join(',');
+    const curAbIds = (hero.abilities||[]).map(a=>a.id+a.level).join(',');
+    if (curAbIds !== prevAbIds && hero.abilities.length > 0) {
+      const newest = hero.abilities[hero.abilities.length-1];
+      addLog('ability', `${newest.id} upgraded to level ${newest.level}`);
+    }
+  }
+  prevHeroState = JSON.parse(JSON.stringify(hero));
+
+  panel.innerHTML = `
+    <div class="hero-card">
+      <div class="hero-header">
+        <span class="hero-name">${AGENT}</span>
+        <div class="hero-meta">
+          <span class="badge ${hero.class}">${hero.class}</span>
+          <span class="badge ${hero.faction}">${hero.faction}</span>
+          <span class="badge ${hero.alive ? 'alive' : 'dead'}">${hero.alive ? 'Alive' : 'Dead'}</span>
+          ${gameNum ? `<span class="badge" style="background:var(--bg3);color:var(--text2)">Game ${gameNum}</span>` : ''}
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-label">HP</div>
+          <div class="stat-value" style="color:${hpColor(hpPct)}">${hero.hp}/${hero.maxHp}</div>
+          <div class="hp-bar-container"><div class="hp-bar" style="width:${Math.round(hpPct*100)}%;background:${hpColor(hpPct)}"></div></div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Level</div>
+          <div class="stat-value" style="color:var(--amber)">${hero.level}</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">XP</div>
+          <div class="stat-value">${hero.xp}<span style="font-size:12px;color:var(--text3)">/${hero.xpToNext}</span></div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Lane</div>
+          <div class="stat-value">${hero.lane}</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Recall</div>
+          <div class="stat-value" style="color:${(hero.recallCooldownMs||0) > 0 ? 'var(--red)' : 'var(--green)'}">${(hero.recallCooldownMs||0) > 0 ? Math.ceil(hero.recallCooldownMs/1000)+'s' : 'Ready'}</div>
+        </div>
+      </div>
+      <div style="margin-top:4px">
+        <div class="stat-label" style="margin-bottom:4px">Abilities</div>
+        <div class="abilities-list">${abilities || '<span style="color:var(--text3);font-size:12px">None yet</span>'}</div>
+      </div>
+      ${hero.abilityChoices ? `<div style="margin-top:8px;font-size:12px;color:var(--amber)">Pending choice: ${hero.abilityChoices.join(', ')}</div>` : ''}
+    </div>`;
+}
+
+function renderGameCard(gameNum, state) {
+  const label = GAME_LABELS[gameNum] || { name: `Game ${gameNum}`, mode: '' };
+  const heroes = state.heroes || [];
+  const myHero = heroes.find(h => h.name === AGENT);
+  const heroCount = heroes.length;
+
+  let winnerHtml = '';
+  if (state.winner) {
+    winnerHtml = `<div class="game-winner ${state.winner}">${state.winner === 'human' ? 'Humans' : 'Orcs'} win!</div>`;
+  }
+
+  const minutes = Math.floor(state.tick / 20 / 60);
+  const seconds = Math.floor((state.tick / 20) % 60);
+  const timeStr = `${minutes}:${String(seconds).padStart(2,'0')}`;
+
+  const lanesHtml = ['top','mid','bot'].map(lane => {
+    const l = state.lanes[lane];
+    const total = l.human + l.orc || 1;
+    const hPct = Math.round((l.human/total)*100);
+    const oPct = 100 - hPct;
+    const towerH = state.towers.find(t => t.faction === 'human' && t.lane === lane);
+    const towerO = state.towers.find(t => t.faction === 'orc' && t.lane === lane);
+    return `
+      <div class="lane">
+        <div class="lane-name">${lane}</div>
+        <div class="lane-units"><span style="color:var(--blue)">${l.human}</span> v <span style="color:var(--red)">${l.orc}</span></div>
+        <div class="lane-bar"><div class="human-side" style="width:${hPct}%"></div><div class="orc-side" style="width:${oPct}%"></div></div>
+        <div class="towers-row">
+          <div class="tower-dot ${towerH && towerH.alive ? 'alive-human' : 'dead'}" title="Human tower: ${towerH ? towerH.hp : 0} HP"></div>
+          <div class="tower-dot ${towerO && towerO.alive ? 'alive-orc' : 'dead'}" title="Orc tower: ${towerO ? towerO.hp : 0} HP"></div>
+        </div>
+      </div>`;
+  }).join('');
+
+  const basesHtml = `
+    <div class="bases-row">
+      <div class="base-hp"><span style="color:var(--blue)">Base</span> ${state.bases.human.hp}/${state.bases.human.maxHp}</div>
+      <div class="base-hp"><span style="color:var(--red)">Base</span> ${state.bases.orc.hp}/${state.bases.orc.maxHp}</div>
+    </div>`;
+
+  const humanHeroes = heroes.filter(h => h.faction === 'human');
+  const orcHeroes = heroes.filter(h => h.faction === 'orc');
+
+  function heroRow(h) {
+    const isOurs = h.name === AGENT;
+    const hpStr = h.alive ? `${h.hp}/${h.maxHp}` : 'Dead';
+    return `<div class="hero-row">
+      <span class="name ${isOurs ? 'ours' : ''}">${h.name}</span>
+      <span class="class">${h.class}</span>
+      <span class="lane-tag">${h.lane}</span>
+      <span class="level">Lv${h.level}</span>
+      <span class="hp-mini ${h.alive ? '' : 'dead-text'}">${hpStr}</span>
+    </div>`;
+  }
+
+  const heroesHtml = `
+    <div class="heroes-list">
+      ${humanHeroes.map(heroRow).join('')}
+      ${orcHeroes.length && humanHeroes.length ? '<div style="border-top:1px solid var(--border);margin:4px 0"></div>' : ''}
+      ${orcHeroes.map(heroRow).join('')}
+    </div>`;
+
+  return `
+    <div class="game-card ${myHero ? 'has-hero' : ''}" id="game-${gameNum}">
+      <div class="game-header">
+        <div>
+          <span class="game-title">${label.name}</span>
+          <span class="game-mode" style="margin-left:8px">${label.mode}</span>
+        </div>
+        <div style="font-size:12px;color:var(--text2)">${heroCount}/20 &middot; ${timeStr}</div>
+      </div>
+      ${winnerHtml}
+      <div class="lanes-container">${lanesHtml}</div>
+      ${basesHtml}
+      <details style="margin-top:8px"><summary class="expand-btn">Heroes (${heroCount})</summary>${heroesHtml}</details>
+    </div>`;
+}
+
+function renderLog() {
+  const el = document.getElementById('logEntries');
+  el.innerHTML = eventLog.map(e =>
+    `<div class="log-entry"><span class="time">${e.time}</span> <span class="${e.type}">${e.msg}</span></div>`
+  ).join('');
+}
+
+async function fetchGame(num) {
+  try {
+    const r = await fetch(`${API}/api/game/state?game=${num}`);
+    return await r.json();
+  } catch(e) {
+    return null;
+  }
+}
+
+async function fetchLeaderboard(type) {
+  try {
+    const r = await fetch(`${API}/api/leaderboard?type=${type}`);
+    return await r.json();
+  } catch(e) {
+    return null;
+  }
+}
+
+function renderLeaderboard(title, data, isAI) {
+  if (!data || !data.length) return `<div class="lb-card"><h3>${title}</h3><div style="color:var(--text3)">No data</div></div>`;
+
+  const winsKey = isAI ? 'ranked_games_won' : 'games_won';
+  const playedKey = isAI ? 'ranked_games_played' : 'games_played';
+
+  const ourIdx = data.findIndex(d => d.name === AGENT);
+  const top20 = data.slice(0, 20);
+  const ourEntry = ourIdx >= 0 ? data[ourIdx] : null;
+  const showSeparate = ourEntry && ourIdx >= 20;
+
+  function row(d, rank) {
+    const isOurs = d.name === AGENT;
+    const wins = d[winsKey] || 0;
+    const played = d[playedKey] || 0;
+    const wr = played > 0 ? Math.round((wins / played) * 100) : 0;
+    const wrClass = wr >= 55 ? 'good' : wr < 45 ? 'bad' : '';
+    const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
+    return `<tr class="${isOurs ? 'ours' : ''}">
+      <td class="rank ${rankClass}">${rank}</td>
+      <td>${d.name}</td>
+      <td class="mmr">${d.mmr}</td>
+      <td>${wins}/${played}</td>
+      <td class="winrate ${wrClass}">${wr}%</td>
+    </tr>`;
+  }
+
+  let rows = top20.map((d, i) => row(d, i + 1)).join('');
+  if (showSeparate) {
+    rows += `<tr class="lb-separator"><td colspan="5"></td></tr>`;
+    rows += row(ourEntry, ourIdx + 1);
+  }
+
+  return `<div class="lb-card">
+    <h3>${title}</h3>
+    <table class="lb-table">
+      <thead><tr><th>#</th><th>Name</th><th>MMR</th><th>W/P</th><th>Win%</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    ${ourEntry ? `<div class="lb-note">MrCartographer: #${ourIdx+1} &middot; ${ourEntry.mmr} MMR &middot; ${ourEntry[winsKey]}W/${ourEntry[playedKey]}P</div>` : ''}
+  </div>`;
+}
+
+async function updateLeaderboards() {
+  const [humans, ai] = await Promise.all([fetchLeaderboard('human'), fetchLeaderboard('ai')]);
+  const el = document.getElementById('leaderboards');
+  el.innerHTML = renderLeaderboard('AI leaderboard', ai, true) + renderLeaderboard('Human leaderboard', humans, false);
+}
+
+async function update() {
+  const games = await Promise.all([1,2,3,4,5].map(n => fetchGame(n)));
+  const grid = document.getElementById('gamesGrid');
+  let html = '';
+  let foundHero = null;
+  let foundGameNum = null;
+
+  games.forEach((state, i) => {
+    const num = i + 1;
+    if (!state) {
+      html += `<div class="game-card"><div class="game-title">Game ${num}</div><div style="color:var(--text3)">Failed to load</div></div>`;
+      return;
+    }
+    const myHero = (state.heroes || []).find(h => h.name === AGENT);
+    if (myHero) { foundHero = myHero; foundGameNum = num; }
+    html += renderGameCard(num, state);
+    // Check game 3 for match end recording
+    if (num === 3) checkGameEnd(state);
+  });
+
+  grid.innerHTML = html;
+  renderHeroPanel(foundHero, foundGameNum);
+  renderLog();
+  document.getElementById('lastUpdate').textContent = new Date().toLocaleTimeString('en-US', { hour12: false });
+}
+
+// ─── Match History ──────────────────────────────────────────────────────────
+
+const HISTORY_BLOB_URL = 'https://jsonblob.com/api/jsonBlob/019ef0d0-a58f-7b40-9aaa-3114baa165f6';
+let cloudHistory = []; // Cached cloud data
+
+function getHistory() {
+  // Merge cloud + local (cloud is authoritative, local catches games while dashboard is open)
+  const local = (() => { try { return JSON.parse(localStorage.getItem('mrcarto_history') || '[]'); } catch(e) { return []; } })();
+  // Dedupe by timestamp
+  const seen = new Set(cloudHistory.map(g => g.timestamp));
+  const merged = [...cloudHistory, ...local.filter(g => !seen.has(g.timestamp))];
+  merged.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+  return merged;
+}
+
+function saveHistory(history) {
+  localStorage.setItem('mrcarto_history', JSON.stringify(history));
+}
+
+async function fetchCloudHistory() {
+  try {
+    const r = await fetch(HISTORY_BLOB_URL, { headers: { 'Accept': 'application/json' } });
+    const data = await r.json();
+    if (Array.isArray(data)) {
+      cloudHistory = data;
+      cloudHistory.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      renderHistory();
+    }
+  } catch(e) { /* silent — local history still works */ }
+}
+
+function recordGame(state) {
+  const heroes = state.heroes || [];
+  const myHero = heroes.find(h => h.name === AGENT);
+  if (!myHero) return;
+
+  const history = getHistory();
+  const entry = {
+    timestamp: new Date().toISOString(),
+    winner: state.winner,
+    won: myHero.faction === state.winner,
+    faction: myHero.faction,
+    heroClass: myHero.class,
+    lane: myHero.lane,
+    level: myHero.level,
+    kills: myHero.kills || 0,
+    deaths: myHero.deaths || 0,
+    assists: myHero.assists || 0,
+    totalDamage: myHero.totalDamage || 0,
+    mmr: myHero.mmr,
+    durationMin: Math.round((state.tick || 0) / 20 / 60),
+    players: heroes.length,
+  };
+  history.unshift(entry); // Newest first
+  if (history.length > 200) history.length = 200;
+  saveHistory(history);
+  addLog('event', `Game recorded: ${entry.won ? 'WIN' : 'LOSS'} — ${entry.kills}/${entry.deaths}/${entry.assists}`);
+  renderHistory();
+}
+
+function renderHistory() {
+  const panel = document.getElementById('historyPanel');
+  const history = getHistory();
+  if (!history.length) {
+    panel.innerHTML = `<div class="history-card"><h3>Match history</h3><div style="color:var(--text3);font-size:13px">No games recorded yet. Results are saved automatically when a game ends.</div></div>`;
+    return;
+  }
+
+  const wins = history.filter(g => g.won).length;
+  const losses = history.length - wins;
+  const wr = Math.round((wins / history.length) * 100);
+  const totalK = history.reduce((s,g) => s + g.kills, 0);
+  const totalD = history.reduce((s,g) => s + g.deaths, 0);
+  const totalA = history.reduce((s,g) => s + g.assists, 0);
+  const avgDmg = Math.round(history.reduce((s,g) => s + g.totalDamage, 0) / history.length);
+  const avgLevel = (history.reduce((s,g) => s + g.level, 0) / history.length).toFixed(1);
+
+  // Strategy breakdown
+  const strats = {};
+  history.forEach(g => {
+    const key = `${g.heroClass}/${g.lane}`;
+    if (!strats[key]) strats[key] = { w: 0, l: 0 };
+    g.won ? strats[key].w++ : strats[key].l++;
+  });
+  const stratSummary = Object.entries(strats).map(([k, v]) => {
+    const swr = Math.round((v.w / (v.w + v.l)) * 100);
+    return `<span class="hs"><b>${k}</b> ${v.w}W-${v.l}L (${swr}%)</span>`;
+  }).join('');
+
+  const rows = history.slice(0, 50).map(g => {
+    const date = new Date(g.timestamp);
+    const timeStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' + date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+    return `<tr>
+      <td class="${g.won ? 'win' : 'loss'}">${g.won ? 'W' : 'L'}</td>
+      <td class="strat">${g.heroClass}/${g.lane}</td>
+      <td>${g.kills}/${g.deaths}/${g.assists}</td>
+      <td>${(g.totalDamage || 0).toLocaleString()}</td>
+      <td style="color:var(--amber)">Lv${g.level}</td>
+      <td>${g.durationMin}m</td>
+      <td style="color:var(--purple)">${g.mmr || '—'}</td>
+      <td style="color:var(--text3)">${timeStr}</td>
+    </tr>`;
+  }).join('');
+
+  panel.innerHTML = `
+    <div class="history-card">
+      <h3>Match history (${history.length} games) <button class="history-clear" onclick="if(confirm('Clear all match history?')){localStorage.removeItem('mrcarto_history');renderHistory();}">Clear</button></h3>
+      <div class="history-stats">
+        <span class="hs"><b>${wins}W-${losses}L</b> (${wr}%)</span>
+        <span class="hs">KDA <b>${totalK}/${totalD}/${totalA}</b></span>
+        <span class="hs">Avg dmg <b>${avgDmg.toLocaleString()}</b></span>
+        <span class="hs">Avg level <b>${avgLevel}</b></span>
+        ${stratSummary}
+      </div>
+      <table class="history-table">
+        <thead><tr><th></th><th>Strategy</th><th>KDA</th><th>Damage</th><th>Level</th><th>Time</th><th>MMR</th><th>Date</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+      ${history.length > 50 ? `<div style="color:var(--text3);font-size:11px;margin-top:6px;text-align:center">Showing 50 of ${history.length} games</div>` : ''}
+    </div>`;
+}
+
+// Detect game 3 ending and record it
+function checkGameEnd(game3State) {
+  if (!game3State) return;
+  // Winner just appeared (transition from no winner to winner)
+  if (game3State.winner && !prevGame3Winner && game3State.tick > 100) {
+    const myHero = (game3State.heroes || []).find(h => h.name === AGENT);
+    if (myHero) {
+      recordGame(game3State);
+    }
+  }
+  prevGame3Winner = game3State.winner || null;
+}
+
+update();
+updateLeaderboards();
+fetchCloudHistory(); // Load persistent history from cloud
+renderHistory();
+setInterval(update, 5000);
+setInterval(updateLeaderboards, 30000);
+setInterval(fetchCloudHistory, 60000); // Refresh cloud history every 60s
+</script>
+</body>
+</html>
